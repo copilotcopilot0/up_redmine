@@ -627,7 +627,7 @@ function getUserID(){
 function getListProject(){
 	return $.ajax({
 	  async: false,
-	  url: config.redmine.REDMINEDOMAIN + config.redmine.API_PROJECT,
+	  url: config.redmine.REDMINEDOMAIN + config.redmine.API_PROJECT + "?limit=100&offset=0",
 	  type:"GET",
 	  contentType:"application/x-www-form-urlencoded; charset=utf-8",
 	  headers: {
