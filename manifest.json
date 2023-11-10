@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "redmine",
+  "description": "redmine",
+  "version": "1.0",
+
+  "browser_action": {
+     "default_icon": "icon.png",
+     "default_popup": "popup.html"
+  },
+  "permissions": ["history", "tabs", "storage"],
+   "background": {
+		"scripts": ["jquery-3.5.1.min.js","config_task_default.js","config.js","common.js","background.js"],
+		"persistent": false
+   },
+  "content_scripts": [{
+    "matches": ["https://project.lampart-vn.com/*"],
+	"css": ["extension.css"],
+    "js": ["jquery-3.5.1.min.js","config_task_default.js","config.js","common.js", "content.js"],
+	"run_at": "document_end"
+  }],
+  "web_accessible_resources": [
+    "/js/inject_content.js",
+	  "/css/ext_plugin.css",
+	  "/template/*",
+    "/img/*"
+  ]
+}

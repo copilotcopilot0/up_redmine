@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+    <style>
+      body {
+        background: #222D32;
+        font-family: 'Roboto', sans-serif;
+          color: #fefefe;
+      }
+
+      .login-box {
+        margin-top: 10px;
+        height: auto;
+        background: #1A2226;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      }
+
+      .login-key {
+        height: 100px;
+        font-size: 80px;
+        line-height: 100px;
+        background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .login-title {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        color: #ECF0F5;
+      }
+
+      .login-form {
+        margin-top: 5px;
+        text-align: left;
+      }
+
+      input[type=text] {
+        background-color: #1A2226;
+        border: none;
+        border-bottom: 2px solid #0DB8DE;
+        border-top: 0px;
+        border-radius: 0px;
+        font-weight: bold;
+        outline: 0;
+        margin-bottom: 20px;
+        padding-left: 0px;
+        color: #ECF0F5;
+      }
+
+      input[type=password] {
+        background-color: #1A2226;
+        border: none;
+        border-bottom: 2px solid #0DB8DE;
+        border-top: 0px;
+        border-radius: 0px;
+        font-weight: bold;
+        outline: 0;
+        padding-left: 0px;
+        margin-bottom: 20px;
+        color: #ECF0F5;
+      }
+
+      .form-group {
+        outline: 0px;
+      }
+
+      .form-control:focus {
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-bottom: 2px solid #0DB8DE;
+        outline: 0;
+        background-color: #1A2226;
+        color: #ECF0F5;
+      }
+
+      input:focus {
+        outline: none;
+        box-shadow: 0 0 0;
+      }
+
+      label {
+        margin-bottom: 0px;
+      }
+
+      .form-control-label {
+        font-size: 10px;
+        color: #6C6C6C;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .btn-outline-primary {
+        border-color: #0DB8DE;
+        color: #0DB8DE;
+        border-radius: 0px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: #A2A4A4;
+        right: 0px;
+      }
+
+      .login-btm {
+        float: left;
+      }
+
+      .login-button {
+        padding-right: 0px;
+        text-align: right;
+          margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+      .login-text {
+        text-align: left;
+        padding-left: 0px;
+        color: #A2A4A4;
+      }
+
+      .loginbttm {
+        padding: 0px;
+      }
+
+      .container{
+         width: 280px;
+      }
+    </style>
+    <title>Up redmine</title>
+    <script src="jquery-3.5.1.min.js"></script>
+      <script src="common.js"></script>
+    <script src="config.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-2"></div>
+          <div class="col-lg-6 col-md-8 login-box">
+              <div class="col-lg-12 login-title">
+                  STAFF
+              </div>
+
+              <div class="col-lg-12 login-form">
+                  <div class="col-lg-12 login-form">
+                      <form>
+                          <div class="form-group">
+                              <input type="radio" id="pg" name="o_position" class="form-control" value="1" checked>
+                              <label for="pg">PG</label>
+                              <input type="radio" id="qc" name="o_position" class="form-control" value="2">
+                              <label for="qc">QC</label><br>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-2"></div>
+          </div>
+      </div>
+  </div>
+
+  <div class="container" style="display: none">
+      <div class="row">
+          <div class="col-lg-3 col-md-2"></div>
+          <div class="col-lg-6 col-md-8 login-box">
+              <div class="col-lg-12 login-title">
+                  Filter
+              </div>
+
+              <div class="col-lg-12 login-form">
+                  <div class="col-lg-12 login-form">
+                      <form>
+                          <div class="form-group">
+                              <label for="link_filter">link filter</label>
+                              <input type="text" id="link_filter" name="link_filter" class="form-control" value="">
+
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-2"></div>
+          </div>
+      </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-2"></div>
+      <div class="col-lg-6 col-md-8 login-box">
+        <div class="col-lg-12 login-title">
+          HITO
+        </div>
+
+        <div class="col-lg-12 login-form">
+          <div class="col-lg-12 login-form">
+            <form>
+              <div class="form-group">
+                <label class="form-control-label">USERNAME</label>
+                <input name="user_hito" type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label">PASSWORD</label>
+                <input name="pass_hito" type="password" class="form-control" i> </br>
+                <input  class="show_pass" type="checkbox" ><span style="color: white">Show Password</span>
+              </div>
+
+              <div class="col-lg-12 loginbttm">
+                <div class="col-lg-6 login-btm login-text">
+                  <!-- Error Message -->
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-2"></div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8 login-box">
+          <div class="col-lg-12 login-title">
+            REDMINE
+          </div>
+          <div class="col-lg-12 login-form">
+            <div class="col-lg-12 login-form">
+              <form>
+
+                <div class="form-group">
+                  <label class="form-control-label">USERNAME</label>
+                  <input name="user_redmine" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label">PASSWORD</label>
+                  <input name="pass_redmine" type="password" class="form-control" i></br>
+                  <input class="show_pass" type="checkbox" ><span style="color: white">Show Password</span>
+                </div>
+                <div class="col-lg-12 loginbttm">
+                  <div class="col-lg-6 login-btm login-text">
+                    <!-- Error Message -->
+                  </div>
+                  <div class="col-lg-6 login-btm login-button">
+                    <button type="submit" class="btn btn-outline-primary">SAVE</button>
+                      <span id="up_redmine_loading"></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-2"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
