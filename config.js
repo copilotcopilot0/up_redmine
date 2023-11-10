@@ -16,8 +16,9 @@ var config = {
 		debug_limit_time:0, // 0 is unlimit , 1,2,3,4 is limit
 	},
 	hito : {
-		urlHitoTime:"https://backend-kintai-hito.lampart-vn.com/api/v1/timestamp/working-time/works-list",
-		urlHitoLogin:"https://backend-kintai-hito.lampart-vn.com/api/v1/user/login",
+		urlHitoTime         :"https://backend-kintai-hito.lampart-vn.com/api/v1/timestamp/working-time/works-list",
+		urlHitoLogin        :"https://hito.lampart-vn.com/backend/v1/login",
+		urlHitoLoginBackend :"https://backend-kintai-hito.lampart-vn.com/api/v1/user/login",
 	},
 	redmine:{
 		REDMINEDOMAIN: "https://project.lampart-vn.com",

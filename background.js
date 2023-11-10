@@ -8,6 +8,7 @@ const maxRe = 90000;
 const employeeId = 189;
 const urlHitoTime = config.hito.urlHitoTime;
 const urlHitoLogin = config.hito.urlHitoLogin;
+const urlHitoLoginBackend = config.hito.urlHitoLoginBackend
 var USER = '';
 var PASS = '';
 var uRed = '';
@@ -223,14 +224,17 @@ function hitoTimeToRedmineTime(timeHito){
 }
 
 
+
+
 function getInfoHito(user,pass){
+
 	let data = {
 		locale: "vi",
 		password: pass,
 		remember: false,
 		username: user
 	}
-	return $.ajax({
+	var $rf = $.ajax({
 		async: false,
 		url:urlHitoLogin,
 		type:"POST",
@@ -241,6 +245,29 @@ function getInfoHito(user,pass){
 			return data;
 		}
 	}).responseJSON.data;
+
+	if(typeof $rf.token !== "undefined"){
+		data = {
+			locale: "vi",
+			token : $rf.token
+		}
+		// get info
+		return $.ajax({
+			async: false,
+			url:urlHitoLoginBackend,
+			type:"POST",
+			data:data,
+			contentType:"application/x-www-form-urlencoded; charset=utf-8",
+			dataType:"json",
+			success: function(data, status, xhr){
+				return data;
+			}
+		}).responseJSON.data;
+	}
+
+	return false;
+
+
 }
 
 
